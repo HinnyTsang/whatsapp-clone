@@ -4,7 +4,7 @@
 
 Follow Tutorial from [Web Dev Simplfied](https://youtu.be/tBr-PybP_9c).
 
-Using Socket.io and React to rebuild a simple messanger in the local host.
+Using Socket.io and React to rebuild a simple messanger in the local host. Instead of directly follow the instructions from the video, we used TypeScript in this project as a practice and learning.
 
 To start the application, please follow the following step.
 
