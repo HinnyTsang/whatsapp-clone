@@ -2,16 +2,24 @@ import React, { useRef } from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
 import { v4 as uuid4 } from 'uuid';
 
-const Login = ({ onIdSubmit }) => {
-  const idRef = useRef(null);
+interface Props {
+  onIdSubmit: (id: string) => void;
+}
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+const Login = ({ onIdSubmit }: Props) => {
+  const idRef = useRef() as React.MutableRefObject<HTMLInputElement>;
+
+  const handleSubmit: React.FormEventHandler<HTMLFormElement> = (
+    event: React.MouseEvent<HTMLFormElement>
+  ) => {
+    event.preventDefault();
     onIdSubmit(idRef.current.value);
   };
 
-  const createNewId = (e) => {
-    e.preventDefault();
+  const createNewId: React.MouseEventHandler<HTMLButtonElement> = (
+    event: React.MouseEvent<HTMLButtonElement>
+  ) => {
+    event.preventDefault();
     onIdSubmit(uuid4());
   };
 
